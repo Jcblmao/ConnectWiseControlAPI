@@ -13,7 +13,8 @@
         $ErrorMessage += "----> Run 'Connect-CWC' to initialize the connection before issuing other CWC cmdlets."
         return Write-Error ($ErrorMessage | Out-String)
     }
-
+    
+    $script:cwcserverconnection.Headers.'X-One-Time-Password' = $(Get-OTP $script:cwcserverconnection.Secret).Code
     $BaseURI = "https://$($script:CWCServerConnection.Server)"
     $Arguments.URI = Join-Url $BaseURI $Arguments.Endpoint
     $Arguments.remove('Endpoint')
