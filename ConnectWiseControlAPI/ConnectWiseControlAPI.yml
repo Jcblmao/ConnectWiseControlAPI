@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "title": "ScreenConnect",
-        "version": "23.9.8.8811"
+        "version": "23.9.10.8817"
     },
     "servers": [
         {
@@ -5904,6 +5904,112 @@
                 }
             }
         },
+        "/App_Extensions/d6455ac7-fae5-4b37-8129-a7306f03d5bf/Service.ashx/teams-integration-settings": {
+            "get": {
+                "operationId": "GetTeamsIntegrationSettings",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/d6455ac7-fae5-4b37-8129-a7306f03d5bf/Service.ashx/teams-trigger-parameters": {
+            "put": {
+                "operationId": "SaveTeamsTriggerParameters",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "webhookURI": {
+                                        "type": "string",
+                                        "format": ""
+                                    },
+                                    "sessionIncludedOrExcluded": {
+                                        "type": "boolean",
+                                        "format": ""
+                                    },
+                                    "sessionIncludedOrExcludedValues": {},
+                                    "securityIncludedOrExcluded": {
+                                        "type": "boolean",
+                                        "format": ""
+                                    },
+                                    "securityIncludedOrExcludedValues": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/App_Extensions/76f13266-6bed-48bc-ba35-5c80e58c68c0/Service.ashx/clp-data-from-cloud-instance": {
             "get": {
                 "operationId": "GetClpDataFromCloudInstance",
@@ -6737,6 +6843,629 @@
                 }
             }
         },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/sessions-by-filter": {
+            "get": {
+                "operationId": "GetSessionsByFilter",
+                "parameters": [
+                    {
+                        "name": "sessionFilter",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/session": {
+            "post": {
+                "operationId": "CreateSession",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "sessionType": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "format": ""
+                                    },
+                                    "isPublic": {
+                                        "type": "boolean",
+                                        "format": ""
+                                    },
+                                    "code": {
+                                        "type": "string",
+                                        "format": ""
+                                    },
+                                    "customPropertyValues": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/session-details-by-session-id": {
+            "get": {
+                "operationId": "GetSessionDetailsBySessionID",
+                "parameters": [
+                    {
+                        "name": "sessionID",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/sessions-by-name": {
+            "get": {
+                "operationId": "GetSessionsByName",
+                "parameters": [
+                    {
+                        "name": "sessionName",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/session-by-session-id": {
+            "get": {
+                "operationId": "GetSessionBySessionID",
+                "parameters": [
+                    {
+                        "name": "sessionID",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/session-custom-properties": {
+            "put": {
+                "operationId": "UpdateSessionCustomProperties",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "sessionID": {
+                                        "type": "string",
+                                        "format": ""
+                                    },
+                                    "newCustomProperties": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/session-name": {
+            "put": {
+                "operationId": "UpdateSessionName",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "sessionID": {
+                                        "type": "string",
+                                        "format": ""
+                                    },
+                                    "newName": {
+                                        "type": "string",
+                                        "format": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/command-to-session/send": {
+            "post": {
+                "operationId": "SendCommandToSession",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "sessionID": {
+                                        "type": "string",
+                                        "format": ""
+                                    },
+                                    "command": {
+                                        "type": "string",
+                                        "format": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/note-to-session": {
+            "post": {
+                "operationId": "AddNoteToSession",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "sessionID": {
+                                        "type": "string",
+                                        "format": ""
+                                    },
+                                    "noteBody": {
+                                        "type": "string",
+                                        "format": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/message-to-session/send": {
+            "post": {
+                "operationId": "SendMessageToSession",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "sessionID": {
+                                        "type": "string",
+                                        "format": ""
+                                    },
+                                    "byHost": {
+                                        "type": "string",
+                                        "format": ""
+                                    },
+                                    "message": {
+                                        "type": "string",
+                                        "format": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/2d558935-686a-4bd0-9991-07539f5fe749/Service.ashx/toolbox-item-to-session/send": {
+            "post": {
+                "operationId": "SendToolboxItemToSession",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "sessionID": {
+                                        "type": "string",
+                                        "format": ""
+                                    },
+                                    "toolboxItemName": {
+                                        "type": "string",
+                                        "format": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/App_Extensions/850c08be-d904-48d4-977a-5c2fcb277fd4/Service.ashx/launch-url": {
             "get": {
                 "operationId": "GetLaunchUrl",
@@ -6750,6 +7479,47 @@
                         }
                     }
                 ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "errorType": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "format": ""
+                                        },
+                                        "detail": {
+                                            "type": "string",
+                                            "format": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/App_Extensions/6fadbbb8-9540-4612-8504-937c5083bca7/Service.ashx/all-queued-commands": {
+            "delete": {
+                "operationId": "RemoveAllQueuedCommands",
+                "parameters": [],
                 "responses": {
                     "200": {
                         "description": "",

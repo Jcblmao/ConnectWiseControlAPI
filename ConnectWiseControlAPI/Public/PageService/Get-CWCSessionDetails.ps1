@@ -1,4 +1,4 @@
-﻿# Combining Get-CWCLastContact and Getting session details. Since we are calling GetSessilDetails anyways, may as well return some of its other useful information
+﻿# Combining Get-CWCLastContact and Getting session details. Since we are calling GetSessionDetails anyways, may as well return some of its other useful information
 function Get-CWCSessionDetails {
     [CmdletBinding()]
     param(

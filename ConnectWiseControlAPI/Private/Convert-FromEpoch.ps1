@@ -22,5 +22,11 @@ Function Convert-FromEpoch () {
         param (
             [parameter(ValueFromPipeline,ValueFromPipelineByPropertyName)][string]$unixTIme
         )
-    Return (Get-Date 01.01.1970)+([System.TimeSpan]::fromseconds($unixTime))
+
+    try {
+        (Get-Date 01.01.1970)+([System.TimeSpan]::fromseconds($unixTime))
+    }
+    catch {
+        Write-Debug "The value is too large to convert to seconds."
+    }
 }
